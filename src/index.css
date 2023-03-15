@@ -1,13 +1,2337 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@font-face {
+  font-family: "Sterilict";
+  src: url("./fonts/Sterilict.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+/***************************************************************** Estilos aplicables en varias partes */
+p {
+  margin: 10px 0px;
+}
+
+body {
+  background-image: #d1d7ece8;
+}
+
+footer {
+  background-color: #d1d7ece8;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 10px 0px;
+  color: #ecc032;
+}
+
+hr {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.title {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.linkReadMore {
+  color: #fe043c;
+}
+
+.linkReadMore:hover {
+  color: #251f56;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+img {
+  width: 100%;
+}
+
+.tituloArticulo1 {
+  background-color: #5d38c9;
+  color: #ecc032;
+  border-color: #ecc032;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tituloArticulo2 {
+  background-color: #ecc032;
+  color: #5d38c9;
+  border-color: #ecc032;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px;
+}
+
+/* .container404 {
+  background-image: url(../img/404.jpg);
+} */
+
+/* ************************************************************************** Estilos del Header */
+
+.seccionHeader {
+  display: flex;
+  padding: 5px;
+  background-color: #333333;
+  background-image: linear-gradient(
+    90deg,
+    #333333 0%,
+    #0c1250 46%,
+    #5d38c9 100%
+  );
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  height: 40px;
+  border-bottom: 2px solid #ecc032;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #ecc032;
+  text-align: center;
+  padding: 13px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.brand {
+  color: #ecc032;
+  font-family: Sterilict;
+  font-size: medium;
+}
+
+.containerImgLogo {
+  width: 40px;
+  height: 59px;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.imgLogo {
+  vertical-align: top;
+}
+
+nav a:hover {
+  background-color: #ecc032;
+  border-radius: 15px;
+  color: #0c1250;
+}
+
+/*************************************************************************** Estilos de la Bienvenida */
+
+.imgBanner {
+  height: 400px;
+  object-fit: cover;
+}
+
+.bienvenido {
+  position: absolute;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  top: 150px;
+  z-index: 1;
+  color: whitesmoke;
+  padding: 0%;
+  background-color: rgba(22, 6, 95, 0.74);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.parrafoTitulo {
+  font-weight: 200;
+}
+
+/**************************************************************************** Estilos de la Historia */
+
+.seccionHistoria {
+  background: #e3ddf3;
+  padding: 10px 0px;
+  margin: 30px;
+  border-radius: 20px;
+}
+
+.historia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.parrafoHistoria {
+  width: 40%;
+  text-align: justify;
+}
+
+.containerImgChef {
+  width: 40%;
+}
+
+.imgChef {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.hamburguesas {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  transition: 1s ease;
+}
+
+.hamburguesas:hover {
+  font-size: xx-large;
+  background-color: #ecc032;
+  border-bottom: 2px solid #ecc032;
+  border-radius: 15px;
+}
+
+/*************************************************************************** Estilos del menú de platos */
+
+.seccionMenu {
+  background-color: #4a5091;
+  border-radius: 20px;
+  margin: 30px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imgMenu {
+  max-width: 100%;
+}
+
+.containerImgMenu {
+  width: 50%;
+  height: auto;
+}
+
+.containerIngredientes {
+  width: 90%;
+  height: auto;
+  color: #0c1250;
+}
+
+.textotituloMenu{
+  color: #0c1250;
+}
+
+.card {
+  width: 25%;
+  border-radius: 10px;
+  margin: 20px 0px;
+  padding: 10px;
+  color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card1 {
+  background-color: #0304f0;
+  background-image: linear-gradient(
+    50deg,
+    #0304f0 0%,
+    #6b90f9 46%,
+    #ffffff 100%
+  );
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card2 {
+  background-color: #f91320;
+  background-image: linear-gradient(
+    49deg,
+    #f91320 0%,
+    #ea5457 50%,
+    #ffffff 100%
+  );
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card3 {
+  background-color: #0f5e04;
+  background-image: linear-gradient(
+    62deg,
+    #0f5e04 0%,
+    #7ef274 50%,
+    #ffffff 100%
+  );
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card4 {
+  background-color: #545454;
+  background-image: linear-gradient(
+    50deg,
+    #545454 0%,
+    #a4a2a1 50%,
+    #ffffff 100%
+  );
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card5 {
+  background-color: #ee9d05;
+  background-image: linear-gradient(
+    45deg,
+    #ee9d05 0%,
+    #fffb7d 50%,
+    #ffffff 100%
+  );
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card6 {
+  background-color: #a564d4;
+  background-image: linear-gradient(
+    50deg,
+    #a564d4 0%,
+    #ce9bee 50%,
+    #ffffff 100%
+  );
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card1:hover {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  box-shadow: -10px 20px 15px gray;
+  filter: none;
+  transition: 1s ease;
+}
+
+.card2:hover {
+  -webkit-filter: grayscale(0%);
+  box-shadow: -10px 20px 15px gray;
+  filter: none;
+  transition: 1s ease;
+}
+
+.card3:hover {
+  -webkit-filter: grayscale(0%);
+  box-shadow: -10px 20px 15px gray;
+  filter: none;
+  transition: 1s ease;
+}
+
+.card4:hover {
+  -webkit-filter: grayscale(0%);
+  box-shadow: -10px 20px 15px gray;
+  filter: none;
+  transition: 1s ease;
+  box-shadow: -10px 20px 15px gray;
+}
+
+.card5:hover {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  transition: 1s ease;
+  box-shadow: -10px 20px 15px gray;
+}
+
+.card6:hover {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  transition: 1s ease;
+  box-shadow: -10px 20px 15px gray;
+}
+
+/***************************************************************************  Estilos de Instalar APP */
+
+.seccionApp {
+  background-color: #ecc032;
+  border-radius: 20px;
+  margin: 30px;
+}
+
+.instalarApp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.containerImgApp {
+  width: 25%;
+  height: auto;
+  margin: 2%;
+  border-radius: 20px;
+}
+.instruccionesApp {
+  width: 40%;
+  text-align: justify;
+  margin: 2%;
+}
+
+.textoInstruccionesApp {
+  margin-top: 5%;
+}
+
+.imgApp {
+  border-radius: 20px;
+}
+
+/***************************************************************************  Estilos de footer */
+
+.seccionContactInfo {
+  background: #e3ddf3;
+  padding: 10px 0px;
+  padding: 2%;
+}
+
+.datos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dondeEstamos .horarios .reservas {
+  width: 25%;
+}
+
+ul {
+  list-style-position: inside;
+  color: #251f56;
+}
+
+.sectionFooter {
+  background: #8e3200;
+  color: white;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.listaSinPuntos {
+  list-style: none;
+}
+
+.sectionFooter {
+  background-color: #333333;
+  background-image: linear-gradient(
+    90deg,
+    #333333 0%,
+    #0c1250 46%,
+    #5d38c9 100%
+  );
+  color: #ecc032;
+}
+
+/***************************************************************************** Media queries (hasta 320 px portrait) *****************/
+
+@media screen and (orientation: portrait) and (max-width: 320px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  body {
+    background-color: #dddfe742;
+  }
+
+  footer {
+    background-color: #dddfe742;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 10px 0px;
+    color: #ecc032;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .title {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .linkReadMore {
+    color: #fe043c;
+  }
+
+  .linkReadMore:hover {
+    color: #251f56;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    background-color: #5d38c9;
+    color: #ecc032;
+    border-color: #ecc032;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    background-color: #ecc032;
+    color: #5d38c9;
+    border-color: #ecc032;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    background-color: #333333;
+    background-image: linear-gradient(
+      90deg,
+      #333333 0%,
+      #0c1250 46%,
+      #5d38c9 100%
+    );
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    border-bottom: 2px solid #ecc032;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav a {
+    color: #ecc032;
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    color: #ecc032;
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  nav a:hover {
+    background-color: #ecc032;
+    border-radius: 15px;
+    color: #0c1250;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    top: 150px;
+    z-index: 1;
+    color: whitesmoke;
+    padding: 0%;
+    background-color: rgba(22, 6, 95, 0.74);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 200;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    background: #e3ddf3;
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .parrafoHistoria {
+    width: 40%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 40%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .hamburguesas {
+    font-family: fantasy;
+    transition: 1s ease;
+  }
+
+  .hamburguesas:hover {
+    font-size: xx-large;
+    background-color: #ecc032;
+    border-bottom: 2px solid #ecc032;
+    border-radius: 15px;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 30px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 50%;
+  }
+
+  .containerImgMenu {
+    width: 75%;
+    height: auto;
+  }
+
+  .card {
+    width: 25%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card1 {
+    background-color: #0304f0;
+    background-image: linear-gradient(
+      50deg,
+      #0304f0 0%,
+      #6b90f9 46%,
+      #ffffff 100%
+    );
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .card2 {
+    background-color: #f91320;
+    background-image: linear-gradient(
+      49deg,
+      #f91320 0%,
+      #ea5457 50%,
+      #ffffff 100%
+    );
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .card3 {
+    background-color: #0f5e04;
+    background-image: linear-gradient(
+      62deg,
+      #0f5e04 0%,
+      #7ef274 50%,
+      #ffffff 100%
+    );
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .card4 {
+    background-color: #545454;
+    background-image: linear-gradient(
+      50deg,
+      #545454 0%,
+      #a4a2a1 50%,
+      #ffffff 100%
+    );
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .card5 {
+    background-color: #ee9d05;
+    background-image: linear-gradient(
+      45deg,
+      #ee9d05 0%,
+      #fffb7d 50%,
+      #ffffff 100%
+    );
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .card6 {
+    background-color: #a564d4;
+    background-image: linear-gradient(
+      50deg,
+      #a564d4 0%,
+      #ce9bee 50%,
+      #ffffff 100%
+    );
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .card1:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    box-shadow: -10px 20px 15px gray;
+    filter: none;
+    transition: 1s ease;
+  }
+
+  .card2:hover {
+    -webkit-filter: grayscale(0%);
+    box-shadow: -10px 20px 15px gray;
+    filter: none;
+    transition: 1s ease;
+  }
+
+  .card3:hover {
+    -webkit-filter: grayscale(0%);
+    box-shadow: -10px 20px 15px gray;
+    filter: none;
+    transition: 1s ease;
+  }
+
+  .card4:hover {
+    -webkit-filter: grayscale(0%);
+    box-shadow: -10px 20px 15px gray;
+    filter: none;
+    transition: 1s ease;
+    box-shadow: -10px 20px 15px gray;
+  }
+
+  .card5:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
+    transition: 1s ease;
+    box-shadow: -10px 20px 15px gray;
+  }
+
+  .card6:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
+    transition: 1s ease;
+    box-shadow: -10px 20px 15px gray;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    background-color: #ecc032;
+    border-radius: 20px;
+    margin: 30px;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .containerImgApp {
+    width: 25%;
+    height: auto;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 40%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 5%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    background: #e3ddf3;
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+
+  ul {
+    list-style-position: inside;
+    color: #251f56;
+  }
+
+  .listaSinPuntos {
+    list-style: none;
+  }
+
+  .sectionFooter {
+    background-color: #333333;
+    background-image: linear-gradient(
+      90deg,
+      #333333 0%,
+      #0c1250 46%,
+      #5d38c9 100%
+    );
+    color: #ecc032;
+  }
+}
+
+/***************************************************************************** Media queries (hasta 320 px) *****************/
+
+@media all and (max-width: 320px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    top: 120px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .parrafoHistoria {
+    width: 95%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 95%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 75%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    background-color: #ecc032;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 5%;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .containerImgApp {
+    width: 75%;
+    height: 60%;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 95%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 0%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
+/***************************************************************************** Media queries (hasta 575 px) *****************/
+
+@media all and (min-width: 321px) and (max-width: 575px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    top: 150px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .parrafoHistoria {
+    width: 95%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 95%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 75%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    background-color: #ecc032;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 5%;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .containerImgApp {
+    width: 75%;
+    height: 60%;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 95%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 0%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
+/***************************************************************************** Media queries (hasta 767 px) *****************/
+
+@media all and (min-width: 576px) and (max-width: 767px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    top: 150px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .parrafoHistoria {
+    width: 90%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 75%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 40%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    border-radius: 20px;
+    margin: 30px;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .containerImgApp {
+    width: 60%;
+    height: auto;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 90%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 5%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
+/***************************************************************************** Media queries (hasta 991 px) *****************/
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: space-between;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: auto;
+    margin-left: 30%;
+    margin-right: 20%;
+    top: 150px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .parrafoHistoria {
+    width: 40%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 50%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 40%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    border-radius: 20px;
+    margin: 30px;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .containerImgApp {
+    width: 40%;
+    height: auto;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 40%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 5%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
+/***************************************************************************** Media queries (hasta 1199 px) *****************/
+
+@media all and (min-width: 992px) and (max-width: 1199px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: auto;
+    margin-left: 30%;
+    margin-right: 20%;
+    top: 150px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .parrafoHistoria {
+    width: 40%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 40%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 40%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    border-radius: 20px;
+    margin: 30px;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .containerImgApp {
+    width: 40%;
+    height: auto;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 40%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 5%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
+/***************************************************************************** Media queries (hasta 1440 px) *****************/
+
+@media all and (min-width: 1200px) and (max-width: 1400px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .brand {
+    text-align: unset;
+    font-size: larger;
+  }
+
+  .containerImgLogo {
+    width: 40px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+    width: auto;
+    margin-left: 30%;
+    margin-right: 20%;
+    top: 150px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
+  .historia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .parrafoHistoria {
+    width: 40%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 40%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 40%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    border-radius: 20px;
+    margin: 30px;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .containerImgApp {
+    width: 40%;
+    height: auto;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 40%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 5%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
+/***************************************************************************** Media queries (mayor a 1440 px) *****************/
+
+@media all and (min-width: 1400px) {
+  /***************************************************************** Estilos aplicables en varias partes */
+  p {
+    margin: 10px 0px;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tituloArticulo1 {
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .tituloArticulo2 {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* ************************************************************************** Estilos del Header */
+
+  .seccionHeader {
+    display: flex;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: large;
+  }
+
+  .brand {
+    text-align: unset;
+  }
+
+  .containerImgLogo {
+    width: 46px;
+    height: 59px;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  .imgLogo {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*************************************************************************** Estilos de la Bienvenida */
+
+  .imgBanner {
+    height: 700px;
+    object-fit: cover;
+  }
+
+  .bienvenido {
+    position: absolute;
+      width: double;
+      margin-left: 25%;
+    margin-right: 10%;
+    top: 300px;
+    z-index: 1;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .parrafoTitulo {
+    font-weight: 150;
+  }
+
+  /**************************************************************************** Estilos de la Historia */
+
+  .seccionHistoria {
+    padding: 10px 0px;
+    margin: 30px;
+    border-radius: 20px;
+    font-size: large;
+  }
+
+  .historia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .parrafoHistoria {
+    width: 60%;
+    text-align: justify;
+  }
+
+  .containerImgChef {
+    width: 30%;
+  }
+
+  .imgChef {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  /*************************************************************************** Estilos del menú de platos */
+
+  .seccionMenu {
+    background-color: #4a5091;
+    border-radius: 20px;
+    margin: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .imgMenu {
+    max-width: 100%;
+  }
+
+  .containerImgMenu {
+    width: 50%;
+    height: auto;
+  }
+
+  .containerIngredientes {
+    width: 90%;
+    height: auto;
+  }
+
+  .card {
+    width: 25%;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /***************************************************************************  Estilos de Instalar APP */
+
+  .seccionApp {
+    border-radius: 20px;
+    margin: 30px;
+    font-size: large;
+  }
+
+  .instalarApp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .containerImgApp {
+    width: fit-content;
+    height: 15%;
+    margin: 2%;
+    border-radius: 20px;
+  }
+  .instruccionesApp {
+    width: 50%;
+    text-align: justify;
+    margin: 2%;
+  }
+
+  .textoInstruccionesApp {
+    margin-top: 5%;
+  }
+
+  .imgApp {
+    border-radius: 20px;
+  }
+
+  /***************************************************************************  Estilos de footer */
+
+  .seccionContactInfo {
+    padding: 10px 0px;
+    padding: 2%;
+    font-size: large;
+  }
+
+  .datos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .dondeEstamos .horarios .reservas {
+    width: 25%;
+  }
+}
+
